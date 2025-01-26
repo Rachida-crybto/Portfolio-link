@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>principal</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Noto Sans", serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            text-decoration: none;
+        }
+        body{
+            background-color: #1f242d;
+            color: #faebd7;
+
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 3% 4%;
+            background-color: #323946;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            width: 100%;
+        }
+        .logo{
+            font-size: 34px;
+            font-weight: 600;
+            color: white;
+            cursor: grab;
+            text-transform: capitalize;
+        }
+        nav a {
+            color: white;
+            margin-left: 4rem;
+            font-size: 20px;
+            
+        }
+        nav a:hover , nav a:active{
+            color: aqua;
+        }
+        #menu-icon{
+            font-size: 3rem;
+            color: white;
+            display: none;
+        }
+        section {
+        min-height: 100vh;
+        padding: 10rem 9% 2rem;
+        }
+        .home {
+       display: flex;
+      justify-content: center;
+      align-items: center;
+        }
+    .home-content h3 {
+        font-size: 3.2rem;
+        font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.home-img img {
+    width: 35vw;
+}
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid aqua;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: aqua;
+    margin: 3rem 1.5rem 3rem 0;
+    
+}
+.social-media a:hover{
+    background-color : aqua;
+    color: #323946;
+    box-shadow: 0 0 6px aqua;
+}
+span{
+    color: aqua;
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: aqua;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem aqua;
+    font-size: 1.6rem;
+    color: #323946;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: #323946;
+}
+
+.about-img img {
+    width: 35vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem;
+    background:#323946;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 3px solid aqua;
+}
+.services-box i {
+    font-size: 7rem;
+    color: aqua;
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+.portfolio {
+    background: #323946;
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem #323946;
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+}
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: aqua;
+    border-radius: 50%;
+}
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: white;
+    background: #323946;
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+}
+
+
+
+
+
+     
+        .projects{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .project-info p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            font-size: 1.1rem;
+            color: #f00909;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #b74b4b;
+        }
+
+       
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .projects {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .project-card {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-info h2 {
+                font-size: 1.6rem;
+            }
+
+            .project-info p {
+                font-size: 1rem;
+            }
+
+            .project-link {
+                font-size: 1rem;
+            }
+        }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> Portfolio</a>
+        <i class="bx bx-menu " id="menu-icon">  </i>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#services ">services</a>
+            <a href="#portfolio">portfolio</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3> Hi it's me</h3>
+            <H1>  RACHIDA BELAHMAM</H1>
+            <H3> and  i'm a <span>digital developper</span> </H3>
+            <p> skilled in HTML, CSS, Python, and Bootstrap. I create responsive and dynamic web applications, focusing on delivering efficient and user-friendly experiences.
+
+            </p>
+            
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/rachida-belahmam-012645346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-github'></i></a>
+                
+                <a href="https://www.instagram.com/i0_0_rxda?igsh=cW05MTNsZ2Y2MHNr"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/rachida-belahmam-012645346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src=" (5).jpg" alt="">
+        </div>
+
+
+       
+    </section>
+    <section class="about" id="about">
+     
+    
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>digital Developer</h3>
+            <p>
+                Hello! I'm Rachida Belahmam, a passionate Digital Developer and I'm 18 years old. I'm studying at CMC Agadir, where I'm pursuing my education in digital development. I have a strong interest in web development and technology, and I'm continually learning and growing my skills in areas such as HTML, CSS, Bootstrap, and Python.
+
+                In addition to my studies, I enjoy exploring new technologies, experimenting with different programming languages, and working on personal projects that help me improve my coding abilities. Outside of development
+            
+                I'm excited about the future of web development and look forward to applying my skills in real-world projects. As I continue my education at CMC Agadir, I'm eager to collaborate, learn from others, and grow into a well-rounded Digital Developer.
+            </p>
+        </div>
+    </section>
+    <!-- services section design -->
+<section class="services" id="services">
+    <h2 class="heading">Our <span>Services</span></h2>
+    <div class="services-container">
+        <div class="services-box">
+            <i class="bx bx-code-alt"></i>
+            <h3>Web Development</h3>
+            <p>
+                I am a dedicated web developer with strong skills in HTML, CSS, and Bootstrap, allowing me to create responsive and visually appealing websites. I specialize in crafting clean and user-friendly designs while ensuring a seamless experience across all devices. Additionally, I have experience in Python, which I use for backend development, automation, and data processing. I am always eager to learn new technologies and improve my skills to build efficient and modern web solutions
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+       
+</section>
+<!-- portfolio section design -->
+<section class="projects">
+    <div class="project-card">
+        <div class="project-image">
+            <img src="image.png" alt="Project 1">
+        </div>
+        <div class="project-info">
+            <h2>TAF1</h2>
+            <p>The design of a website that sells clothes</p>
+            <a href="TAF1.html" class="project-link">View More</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-image">
+            <img src="taf2.png" alt="Project 2">
+        </div>
+        <div class="project-info">
+            <h2>TAF2</h2>
+            <p>distribution of a website using grid (html/css)</p>
+            <a href="TAF2.html" class="project-link">View More</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section Design -->
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <form action="#">
+        <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-box">
+            <input type="number" placeholder="Mobile Number">
+            <input type="text" placeholder="Email Subject">
+        </div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+</section>
+
+
+
+    
+</body>
+</html>
